@@ -5,49 +5,44 @@ class Program
 {
     static void Main(string[] args)
     {   
-        int guess = -1;
+        DisplayMessage();
+        string name = PromptUserName();
+        int number = PromptUserNumber();
+        int square = SquareNumber(number);
+        DisplayResult(name, square);
+    }
 
-        Random randomGenerator = new Random();
-        int magicNumber = randomGenerator.Next(1, 101);
+    static void DisplayMessage()
+    {
+        Console.WriteLine("Welcome");
+    }
 
-        //Console.WriteLine("What is the magic number? ");
-        //int magicNumber = int.Parse(Console.ReadLine());
-        //string number = Console.ReadLine();
-        //int magicNumber = int.Parse(number);
+    static string PromptUserName()
+    {
+        string name = "";
+        Console.WriteLine("What is your name? ");
+        name = Console.ReadLine();
 
-        while (guess != magicNumber)
-        {
-            Console.WriteLine("What is your guess?");
-            guess = int.Parse(Console.ReadLine());
-            //string guess = Console.ReadLine();
-            //answer = int.Parse(guess);
+        return name;
+    }
 
-            if (guess < magicNumber)
-            {
-                Console.Write("Higher. ");
-            }
+    static int PromptUserNumber()
+    {
+        Console.WriteLine("What is your number? ");
+        int number = int.Parse(Console.ReadLine());
 
-            else if (guess > magicNumber)
-            {
-                Console.Write("Lower. ");
-            }
+        return number;
+    }
 
-            else
-            {
-                Console.Write("You guessed the magic number!!!");
-            }
-        }
+    static int SquareNumber(int number)
+    {
+        int square = number * number;
 
+        return square;
+    }
 
-
-
-
-
-
-
-
-
-
-
+    static void DisplayResult(string name, int square)
+    {
+        Console.WriteLine($"{name}, the square of your number is: {square}");
     }
 }
