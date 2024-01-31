@@ -1,9 +1,25 @@
 using System;
 
-class Program
+public static class Program
 {
-    static void Main(string[] args)
+
+    static void PrintPrompt()
     {
-        Console.WriteLine("Hello Develop02 World!");
+
     }
+
+    static void PrintEntries()
+    {
+        
+            
+    }
+
+    static string GetEntries()
+    {
+        Console.WriteLine("Please enter your journal entry: ");
+        string entry = Console.ReadLine();
+
+        return entry;
+    }
+
 }
